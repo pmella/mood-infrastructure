@@ -40,7 +40,7 @@ resource "kubernetes_pod" "nginx-example" {
     }
   }
 
-  depends_on = [module.gke]
+  depends_on = ["module.gke"]
 }
 
 resource "kubernetes_service" "nginx-example" {
@@ -63,5 +63,5 @@ resource "kubernetes_service" "nginx-example" {
     type = "LoadBalancer"
   }
 
-  depends_on = [module.gke]
+  depends_on = ["module.gke"]
 }
