@@ -15,11 +15,11 @@ steps:
   args:
   - '-c'
   - |
-      if [ -d "environment/$BRANCH_NAME/" ]; then
-        cd environment/$BRANCH_NAME
+      if [ -d "sdlc/environment/$BRANCH_NAME/" ]; then
+        cd sdlc/environment/$BRANCH_NAME
         terraform init
       else
-        for dir in environment/*/
+        for dir in sdlc/environment/*/
         do
           cd ${dir}
           env=${dir%*/}
@@ -40,11 +40,11 @@ steps:
   args:
   - '-c'
   - |
-      if [ -d "environment/$BRANCH_NAME/" ]; then
-        cd environment/$BRANCH_NAME
+      if [ -d "sdlc/environment/$BRANCH_NAME/" ]; then
+        cd sdlc/environment/$BRANCH_NAME
         terraform plan
       else
-        for dir in environment/*/
+        for dir in sdlc/environment/*/
         do
           cd ${dir}
           env=${dir%*/}
@@ -66,8 +66,8 @@ steps:
   args:
   - '-c'
   - |
-      if [ -d "environment/$BRANCH_NAME/" ]; then
-        cd environment/$BRANCH_NAME
+      if [ -d "sdlc/environment/$BRANCH_NAME/" ]; then
+        cd sdlc/environment/$BRANCH_NAME
         terraform apply -auto-approve
       else
         echo "***************************** SKIPPING APPLYING *******************************"
@@ -84,8 +84,8 @@ steps:
 #  args:
 #  - '-c'
 #  - |
-#      if [ -d "environment/$BRANCH_NAME/" ]; then
-#        cd environment/$BRANCH_NAME
+#      if [ -d "sdlc/environment/$BRANCH_NAME/" ]; then
+#        cd sdlc/environment/$BRANCH_NAME
 #        terraform destroy -auto-approve
 #      else
 #        echo "***************************** SKIPPING APPLYING *******************************"
