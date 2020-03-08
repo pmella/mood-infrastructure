@@ -1,3 +1,3 @@
 # mood-infrastructure
 
-test dev
+test dev dev
