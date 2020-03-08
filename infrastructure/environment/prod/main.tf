@@ -10,6 +10,7 @@ module "vpc" {
   source  = "../../module/vpc"
   project = "${var.project}"
   env     = "${local.env}"
+  region  = "${var.region}"
 }
 
 module "http_server" {
