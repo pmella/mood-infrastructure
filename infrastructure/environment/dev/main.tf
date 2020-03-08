@@ -23,5 +23,4 @@ module "http_server" {
   source  = "../../module/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
-  env     = "${local.env}"
 }
