@@ -1,5 +1,5 @@
 locals {
-  env = "dev"
+  env = "prod"
 }
 
 provider "google" {
@@ -18,9 +18,9 @@ module "http_server" {
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
   env     = "${local.env}"
-  }
-  
-  module "firewall" {
+}
+
+module "firewall" {
   source  = "../../module/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
