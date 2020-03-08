@@ -22,4 +22,5 @@ module "firewall" {
   source  = "../../module/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
+  env     = "${local.env}"
 }
