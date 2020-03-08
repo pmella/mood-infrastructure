@@ -7,19 +7,19 @@ provider "google" {
 }
 
 module "vpc" {
-  source  = "../../modules/vpc"
+  source  = "../../module/vpc"
   project = "${var.project}"
   env     = "${local.env}"
 }
 
 module "http_server" {
-  source  = "../../modules/http_server"
+  source  = "../../module/http_server"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
 
 module "firewall" {
-  source  = "../../modules/firewall"
+  source  = "../../module/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
