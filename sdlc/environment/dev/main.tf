@@ -14,19 +14,19 @@ module "vpc" {
 }
 
 module "firewall" {
-  source  = "../../sdlc/module/firewall"
+  source  = "../../module/firewall"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
 
 module "http_server" {
-  source  = "../../sdlc/module/http_server"
+  source  = "../../module/http_server"
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
 
 module "gke" {
-  source = "../../sdlc/module/gke"
+  source = "../../module/gke"
   project = "${var.project}"
   cluster_name_suffix = "${var.cluster_name_suffix}"
   region = "${var.region}"
